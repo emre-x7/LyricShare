@@ -30,7 +30,6 @@ app.db
 *.db
 *.sqlite
 Database/
-Migrations/
 
 # Environment variables
 .env
@@ -51,6 +50,3 @@ Thumbs.db
 # Backup files
 *.backup
 *.bak
-
-# Local development
-launchSettings.json
