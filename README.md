@@ -39,7 +39,7 @@
 ### Backend Kurulumu
 ```bash
 # Repository'yi klonla
-git clone https://github.com/kullanici-adin/LyricShare.git
+git clone https://github.com/emre-x7/LyricShare.git
 cd LyricShare/backend
 
 # Database connection string'i ayarla
