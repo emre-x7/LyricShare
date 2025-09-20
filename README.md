@@ -106,5 +106,19 @@ Email: user7@user.com
 Şifre: User123!
 ```
 
+### Lyric Share Ön İzleme
+
+<img width="1898" height="918" alt="image" src="https://github.com/user-attachments/assets/ae558bab-8a13-4e27-942a-255500e083cc" />
 <img width="1917" height="926" alt="image" src="https://github.com/user-attachments/assets/de81cfea-cd84-43d6-9eac-b98847ce82a0" />
+<img width="1898" height="925" alt="image" src="https://github.com/user-attachments/assets/6ce3f9b9-abd2-42da-991a-41a26d73d944" />
+<img width="1897" height="918" alt="image" src="https://github.com/user-attachments/assets/78a8734d-62bb-4220-bd4d-74b2666f883b" />
+<img width="1895" height="838" alt="image" src="https://github.com/user-attachments/assets/1c218865-b046-4b7f-94ea-fb62c8176ace" />
+<img width="1900" height="922" alt="image" src="https://github.com/user-attachments/assets/2399d43b-29ff-45e8-9fe6-14bfdb4e7cd7" />
+<img width="1902" height="911" alt="image" src="https://github.com/user-attachments/assets/fe587359-c233-41ec-8b3a-1d6ca568d4cd" />
+<img width="1897" height="915" alt="image" src="https://github.com/user-attachments/assets/2867a7a5-1104-4602-9d56-beecdfe64f16" />
+
+
+
+
+
 
