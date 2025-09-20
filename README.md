@@ -104,3 +104,7 @@ npm start
 Normal Kullanıcı:
 Email: user7@user.com
 Şifre: User123!
+```
+
+<img width="1917" height="926" alt="image" src="https://github.com/user-attachments/assets/de81cfea-cd84-43d6-9eac-b98847ce82a0" />
+
