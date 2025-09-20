@@ -54,7 +54,8 @@ namespace LyricShare.API.Controllers
                         AuthorEmail = sl.User.Email,
                         LikeCount = sl.Likes.Count,
                         CommentCount = sl.Comments.Count,
-                        HasLiked = userId.HasValue ? sl.Likes.Any(l => l.UserId == userId.Value) : false
+                        HasLiked = userId.HasValue ? sl.Likes.Any(l => l.UserId == userId.Value) : false,
+                        UserId = sl.UserId
                     })
                     .ToListAsync();
 
@@ -93,7 +94,9 @@ namespace LyricShare.API.Controllers
                         AuthorEmail = sl.User.Email,
                         LikeCount = sl.Likes.Count,
                         CommentCount = sl.Comments.Count,
-                        HasLiked = userId.HasValue ? sl.Likes.Any(l => l.UserId == userId.Value) : false
+                        HasLiked = userId.HasValue ? sl.Likes.Any(l => l.UserId == userId.Value) : false,
+                        UserId = sl.UserId
+
                     })
                     .FirstOrDefaultAsync();
 
