@@ -79,8 +79,10 @@ dotnet run
 
 # API şu adreste çalışacak: https://localhost:52472
 # Swagger dokümantasyonu: https://localhost:52472/swagger
+```
 
 ### Frontend Kurulumu
+```bash
 # Yeni terminal penceresi aç
 cd LyricShare/frontend
 
