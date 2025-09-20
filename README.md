@@ -97,3 +97,10 @@ npm install
 npm start
 
 # Uygulama şu adreste çalışacak: http://localhost:3000
+```
+
+### Test Hesabı
+```bash
+Normal Kullanıcı:
+Email: user7@user.com
+Şifre: User123!
