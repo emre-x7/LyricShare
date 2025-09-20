@@ -2,36 +2,44 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { SongLyric } from "../../services/songService";
 import LikeButton from "./LikeButton";
+import { useAuth } from "../../contexts/AuthContext";
 
 interface SongCardProps {
   song: SongLyric;
+  onEdit?: (songId: number) => void;
 }
 
-const SongCard: React.FC<SongCardProps> = ({ song }) => {
-  // Like butonuna tıklama için özel handler
+const SongCard: React.FC<SongCardProps> = ({ song, onEdit }) => {
+  const { user } = useAuth();
+  const isOwner = user?.id === song.userId;
+  const canEdit = isOwner || user?.roles?.includes("Admin");
+
   const handleLikeClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
   };
 
-  // Like butonunun içindeki SVG'ye tıklama
-  const handleLikeButtonClick = (e: React.MouseEvent) => {
+  const handleEditClick = (e: React.MouseEvent) => {
+    e.preventDefault();
     e.stopPropagation();
+    if (onEdit) {
+      onEdit(song.id);
+    }
   };
 
   return (
     <Link
       to={`/song/${song.id}`}
-      className="block bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow hover:bg-gray-50 group"
+      className="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow hover:bg-gray-50 dark:hover:bg-gray-700 group relative"
     >
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1 min-w-0">
-          <h2 className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors truncate">
+          <h2 className="text-xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
             {song.title}
           </h2>
-          <p className="text-gray-600 mt-1">Sanatçı: {song.artist}</p>
+          <p className="text-gray-600 dark:text-gray-400 mt-1">Sanatçı: {song.artist}</p>
         </div>
-        <div onClick={handleLikeButtonClick}>
+        <div onClick={handleLikeClick}>
           <LikeButton
             songId={song.id}
             initialLiked={song.hasLiked}
@@ -41,12 +49,12 @@ const SongCard: React.FC<SongCardProps> = ({ song }) => {
       </div>
 
       <div className="mb-4">
-        <p className="text-gray-700 whitespace-pre-line line-clamp-3">
+        <p className="text-gray-700 dark:text-gray-300 whitespace-pre-line line-clamp-3">
           {song.content}
         </p>
       </div>
 
-      <div className="flex justify-between items-center text-sm text-gray-500">
+      <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
         <div className="flex-1 min-w-0">
           <span className="font-medium truncate">
             {song.authorFirstName} {song.authorLastName}
@@ -72,7 +80,7 @@ const SongCard: React.FC<SongCardProps> = ({ song }) => {
             {song.commentCount}
           </span>
 
-          <span className="text-blue-600 font-medium whitespace-nowrap">
+          <span className="text-blue-600 dark:text-blue-400 font-medium whitespace-nowrap">
             Devamını oku →
           </span>
         </div>

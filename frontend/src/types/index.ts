@@ -15,4 +15,3 @@ export interface AuthContextType {
   loading: boolean;
 }
 
-export {};

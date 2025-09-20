@@ -27,7 +27,6 @@ export interface UpdateSongData {
   artist: string;
   content: string;
 }
-
 export const songService = {
   // Tüm şarkıları getir
   async getAllSongs(): Promise<SongLyric[]> {

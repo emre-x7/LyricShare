@@ -24,7 +24,7 @@ const Input: React.FC<InputProps> = ({
   return (
     <div className="mb-4">
       {label && (
-        <label className="block text-gray-700 text-sm font-bold mb-2">
+        <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">
           {label}
         </label>
       )}
@@ -35,11 +35,11 @@ const Input: React.FC<InputProps> = ({
         value={value}
         onChange={onChange}
         required={required}
-        className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-          error ? "border-red-500" : "border-gray-300"
+        className={`w-full px-3 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 ${
+          error ? "border-red-500 dark:border-red-400" : "border-gray-300 dark:border-gray-600"
         }`}
       />
-      {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
+      {error && <p className="text-red-500 dark:text-red-400 text-xs mt-1">{error}</p>}
     </div>
   );
 };

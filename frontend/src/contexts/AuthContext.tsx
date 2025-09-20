@@ -18,17 +18,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const checkAuthStatus = () => {
     const token = localStorage.getItem("token");
     if (token) {
-      // Token varsa, kullanıcı bilgilerini decode et (basit versiyon)
       try {
         const payload = JSON.parse(atob(token.split(".")[1]));
+
         const userData: User = {
           id: parseInt(payload.sub),
           email: payload.email,
           firstName: payload.firstName,
           lastName: payload.lastName,
           createdAt: payload.createdAt,
-          roles: payload.role ? [payload.role] : ["User"],
+          roles: payload.role ? [payload.role] : payload.roles || ["User"],
         };
+
         setUser(userData);
         setIsAuthenticated(true);
       } catch (error) {
@@ -38,7 +39,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     }
     setLoading(false);
   };
-
   const login = (token: string, userData: User) => {
     localStorage.setItem("token", token);
     setUser(userData);
